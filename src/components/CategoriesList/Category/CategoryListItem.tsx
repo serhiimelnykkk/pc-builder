@@ -1,3 +1,4 @@
+import { ProductList } from "@/components/CategoriesList/Category/ProductList/ProductList";
 import { Categories } from "@/types";
 
 interface Props {
@@ -5,5 +6,10 @@ interface Props {
 }
 
 export const CategoryListItem = ({ category }: Props) => {
-  return <li>{category}</li>;
+  return (
+    <li>
+      <span>{category}</span>
+      <ProductList category={category} />
+    </li>
+  );
 };
