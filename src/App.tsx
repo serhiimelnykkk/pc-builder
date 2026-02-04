@@ -1,3 +1,9 @@
+import { CategoriesList } from "@/components/CategoriesList/CategoriesList";
+
 export const App = () => {
-  return <div className="bg-red-500">App</div>;
+  return (
+    <div>
+      <CategoriesList />
+    </div>
+  );
 };
