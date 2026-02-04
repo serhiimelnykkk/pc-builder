@@ -4,6 +4,6 @@ interface Props {
   category: (typeof Categories)[number];
 }
 
-export const Category = ({ category }: Props) => {
+export const CategoryListItem = ({ category }: Props) => {
   return <li>{category}</li>;
 };
