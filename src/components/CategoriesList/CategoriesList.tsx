@@ -1,11 +1,11 @@
-import { Category } from "@/components/CategoriesList/Category/Category";
+import { CategoryListItem } from "@/components/CategoriesList/Category/CategoryListItem";
 import { Categories } from "@/types";
 
 export const CategoriesList = () => {
   return (
     <ul>
       {Categories.map((category) => (
-        <Category key={category} category={category} />
+        <CategoryListItem key={category} category={category} />
       ))}
     </ul>
   );
