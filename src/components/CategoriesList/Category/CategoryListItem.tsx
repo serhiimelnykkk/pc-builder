@@ -8,7 +8,6 @@ interface Props {
 export const CategoryListItem = ({ category }: Props) => {
   return (
     <li>
-      <span>{category}</span>
       <ProductList category={category} />
     </li>
   );

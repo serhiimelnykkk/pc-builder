@@ -1,6 +1,13 @@
 import { CategoryApiUrls } from "@/api";
 import { ProductListItem } from "@/components/CategoriesList/Category/ProductList/Product/ProductListItem";
 import { Categories, type BaseComponent } from "@/types";
+import {
+  Content,
+  Header,
+  Item,
+  Root,
+  Trigger,
+} from "@radix-ui/react-accordion";
 import { useEffect, useState } from "react";
 
 interface Props {
@@ -18,14 +25,21 @@ export const ProductList = ({ category }: Props) => {
   }, [category]);
 
   return (
-    <div>
-      {products.map((product) => (
-        <ProductListItem
-          key={product.id}
-          product={product}
-          category={category}
-        />
-      ))}
-    </div>
+    <Root type="single" collapsible>
+      <Item value={category}>
+        <Header>
+          <Trigger>{category}</Trigger>
+        </Header>
+        <Content>
+          {products.map((product) => (
+            <ProductListItem
+              key={product.id}
+              product={product}
+              category={category}
+            />
+          ))}
+        </Content>
+      </Item>
+    </Root>
   );
 };
