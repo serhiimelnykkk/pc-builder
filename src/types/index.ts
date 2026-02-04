@@ -38,3 +38,5 @@ export interface PcBuild {
   motherboard: Motherboard;
   psu: PSU;
 }
+
+export const Categories = ["CPU", "GPU", "Motherboard", "RAM", "PSU"] as const;
