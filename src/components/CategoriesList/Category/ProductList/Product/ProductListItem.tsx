@@ -17,23 +17,67 @@ export const ProductListItem = ({ product, category }: Props) => {
   switch (category) {
     case "CPU": {
       const p = product as CPU;
-      return <p>{`${p.name} ${p.cores} ${p.socket} ${p.price} ${p.tdp}`}</p>;
+      return (
+        <ul
+          className={`grid grid-cols-[minmax(150px,30%)_repeat(4,1fr)] gap-4 py-4 place-content-center border-b border-neutral-600`}
+        >
+          <li>{p.name}</li>
+          <li>{p.cores}</li>
+          <li>{p.socket}</li>
+          <li>{p.tdp}</li>
+          <li>{p.price}</li>
+        </ul>
+      );
     }
     case "GPU": {
       const p = product as GPU;
-      return <p>{`${p.name} ${p.price} ${p.suggestedPsu}`}</p>;
+      return (
+        <ul
+          className={`grid grid-cols-[minmax(150px,30%)_repeat(2,1fr)] gap-4 py-4 place-content-center border-b border-neutral-600`}
+        >
+          <li>{p.name}</li>
+          <li>{p.suggestedPsu}</li>
+          <li>{p.price}</li>
+        </ul>
+      );
     }
     case "PSU": {
       const p = product as PSU;
-      return <p>{`${p.name} ${p.price} ${p.wattage}`}</p>;
+      return (
+        <ul
+          className={`grid grid-cols-[minmax(150px,30%)_repeat(2,1fr)] gap-4 py-4 place-content-center border-b border-neutral-600`}
+        >
+          <li>{p.name}</li>
+          <li>{p.wattage}</li>
+          <li>{p.price}</li>
+        </ul>
+      );
     }
     case "RAM": {
       const p = product as RAM;
-      return <p>{`${p.name} ${p.price} ${p.capacity} ${p.ramType} `}</p>;
+      return (
+        <ul
+          className={`grid grid-cols-[minmax(150px,30%)_repeat(3,1fr)] gap-4 py-4 place-content-center border-b border-neutral-600`}
+        >
+          <li>{p.name}</li>
+          <li>{p.capacity}</li>
+          <li>{p.ramType}</li>
+          <li>{p.price}</li>
+        </ul>
+      );
     }
     case "Motherboard": {
       const p = product as Motherboard;
-      return <p>{`${p.name} ${p.ramType} ${p.socket} ${p.price}`}</p>;
+      return (
+        <ul
+          className={`grid grid-cols-[minmax(150px,30%)_repeat(3,1fr)] gap-4 py-4 place-content-center border-b border-neutral-600`}
+        >
+          <li>{p.name}</li>
+          <li>{p.socket}</li>
+          <li>{p.ramType}</li>
+          <li>{p.price}</li>
+        </ul>
+      );
     }
     default:
       return null;
